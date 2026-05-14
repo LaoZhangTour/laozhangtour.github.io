@@ -3,140 +3,173 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>老张的博客 | LaoZhang</title>
+    <title>老张的暗黑博客 | LaoZhang</title>
     <style>
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
         }
+
         body {
-            font-family: "Segoe UI", "Microsoft Yahei", sans-serif;
-            background-color: #f0f2f5;
-            color: #333;
-            line-height: 1.7;
+            font-family: "Microsoft Yahei", system-ui, sans-serif;
+            background-color: #0d1117;
+            color: #c9d1d9;
+            line-height: 1.8;
         }
-        /* 头部导航 */
-        header {
-            background: #222;
-            color: #fff;
-            padding: 20px 0;
+
+        /* 导航栏 */
+        nav {
+            background-color: #161b22;
+            padding: 18px 0;
             text-align: center;
+            border-bottom: 1px solid #30363d;
         }
-        header h1 {
-            font-size: 26px;
-            font-weight: normal;
+
+        nav h1 {
+            font-size: 24px;
+            color: #f0f6fc;
+            font-weight: 500;
         }
-        header p {
-            color: #aaa;
+
+        nav p {
             font-size: 14px;
+            color: #8b949e;
         }
-        /* 主体容器 */
-        .wrap {
-            max-width: 800px;
+
+        .nav-links {
+            margin-top: 12px;
+        }
+
+        .nav-links a {
+            color: #8b949e;
+            text-decoration: none;
+            margin: 0 12px;
+            font-size: 15px;
+            transition: 0.3s;
+        }
+
+        .nav-links a:hover {
+            color: #58a6ff;
+        }
+
+        /* 主容器 */
+        .container {
+            max-width: 780px;
             margin: 40px auto;
             padding: 0 20px;
         }
+
         /* 个人简介卡片 */
-        .profile {
-            background: #fff;
-            padding: 30px;
-            border-radius: 12px;
+        .profile-card {
+            background-color: #161b22;
+            border-radius: 14px;
+            padding: 35px;
             text-align: center;
-            box-shadow: 0 2px 10px rgba(0,0,0,0.08);
+            border: 1px solid #30363d;
             margin-bottom: 30px;
         }
+
         .avatar {
             width: 120px;
             height: 120px;
             border-radius: 50%;
-            border: 3px solid #444;
-            margin-bottom: 15px;
+            border: 3px solid #30363d;
+            margin-bottom: 18px;
         }
-        .profile h2 {
+
+        .profile-card h2 {
+            color: #f0f6fc;
             font-size: 22px;
             margin-bottom: 8px;
         }
-        .profile .intro {
-            color: #666;
+
+        .profile-card .desc {
+            color: #8b949e;
+            font-size: 15px;
+        }
+
+        /* 博客文章卡片 */
+        .post {
+            background-color: #161b22;
+            border: 1px solid #30363d;
+            border-radius: 14px;
+            padding: 28px;
             margin-bottom: 20px;
+            transition: 0.3s;
         }
-        .profile a {
-            display: inline-block;
-            margin: 0 8px;
-            padding: 6px 16px;
-            background: #222;
-            color: #fff;
-            text-decoration: none;
-            border-radius: 20px;
-            font-size: 14px;
+
+        .post:hover {
+            border-color: #58a6ff;
+            transform: translateY(-3px);
         }
-        .profile a:hover {
-            background: #409eff;
-        }
-        /* 文章列表 */
-        .post-card {
-            background: #fff;
-            padding: 25px;
-            border-radius: 12px;
-            margin-bottom: 20px;
-            box-shadow: 0 2px 10px rgba(0,0,0,0.08);
-        }
-        .post-card h3 {
+
+        .post h3 {
+            color: #f0f6fc;
             font-size: 20px;
             margin-bottom: 10px;
         }
-        .post-card .date {
+
+        .post .date {
             font-size: 13px;
-            color: #999;
+            color: #8b949e;
             margin-bottom: 12px;
         }
-        .post-card p {
-            color: #555;
+
+        .post p {
+            color: #c9d1d9;
         }
+
+        /* 页脚 */
         footer {
             text-align: center;
-            font-size: 14px;
-            color: #999;
             padding: 40px 0;
+            color: #6e7681;
+            font-size: 14px;
+            border-top: 1px solid #30363d;
+            margin-top: 20px;
         }
     </style>
 </head>
 <body>
 
-<header>
-    <h1>老张的博客</h1>
-    <p>记录生活 · 分享技术 · 慢慢成长</p>
-</header>
-
-<div class="wrap">
-    <!-- 个人资料 自动加载GitHub头像 -->
-    <div class="profile">
-        <img class="avatar" src="https://github.com/laozhangtour.png" alt="头像">
-        <h2>LaoZhang / 老张</h2>
-        <p class="intro">热爱折腾、喜欢旅行、专注日常与技术记录</p>
+<!-- 顶部导航 -->
+<nav>
+    <h1>老张的个人博客</h1>
+    <p>记录 · 沉淀 · 成长</p>
+    <div class="nav-links">
+        <a href="/">首页</a>
         <a href="https://github.com/laozhangtour" target="_blank">GitHub</a>
-        <a href="#">随笔日记</a>
-        <a href="#">技术笔记</a>
+        <a href="#">技术随笔</a>
+        <a href="#">生活日记</a>
+    </div>
+</nav>
+
+<div class="container">
+    <!-- 个人信息 自动拉取GitHub头像 -->
+    <div class="profile-card">
+        <img class="avatar" src="https://github.com/laozhangtour.png" alt="头像">
+        <h2>LaoZhang 老张</h2>
+        <p class="desc">热爱生活 | 喜欢旅行 | 记录技术与日常</p>
     </div>
 
-    <!-- 博客文章示例 -->
-    <div class="post-card">
-        <h3>欢迎来到我的个人博客</h3>
+    <!-- 博客文章 -->
+    <div class="post">
+        <h3>欢迎访问我的暗黑风格博客</h3>
         <div class="date">2026-05-14</div>
-        <p>这里用来日常记录、技术心得、生活随感，以后可以不断新增文章卡片。</p>
+        <p>基于 GitHub Pages 搭建纯静态暗黑主题博客，简洁干净，手机电脑都适配，无需服务器，永久免费托管。</p>
     </div>
 
-    <div class="post-card">
-        <h3>搭建 GitHub.io 博客主页记录</h3>
+    <div class="post">
+        <h3>如何在 GitHub.io 搭建个人博客</h3>
         <div class="date">2026-05-14</div>
-        <p>使用 GitHub Pages 搭建个人免费博客主页，简洁清爽，无需服务器。</p>
+        <p>只需创建同名仓库，配置 Pages，放入 index.html 即可拥有属于自己的个人主页博客。</p>
     </div>
 
 </div>
 
 <footer>
-    © 2026 laozhangtour.github.io | All Rights Reserved
+    © 2026 laozhangtour.github.io | Dark Theme Blog
 </footer>
 
 </body>
