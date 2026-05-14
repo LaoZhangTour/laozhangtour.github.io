@@ -1,34 +1,93 @@
-
 <!DOCTYPE html>
 <html lang="zh-CN">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>如何在 GitHub.io 搭建个人博客</title>
+    <title>GitHub Pages 博客搭建避坑指南</title>
     <style>
-        * {margin:0;padding:0;box-sizing:border-box;}
-        body{background:#0d1117;color:#c9d1d9;font-family:"Microsoft Yahei",sans-serif;line-height:2;}
-        nav{background:#161b22;padding:15px 0;text-align:center;border-bottom:1px solid #30363d;}
-        nav a{color:#58a6ff;text-decoration:none;font-size:16px;}
-        .container{max-width:720px;margin:40px auto;padding:0 20px;}
-        h1{color:#f0f6fc;margin-bottom:15px;font-size:24px;}
-        .date{color:#8b949e;font-size:14px;margin-bottom:30px;}
-        .content{font-size:16px;}
-        footer{text-align:center;padding:40px 0;color:#6e7681;font-size:14px;border-top:1px solid #30363d;margin-top:50px;}
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            font-family: "Microsoft Yahei", system-ui, sans-serif;
+            background-color: #0d1117;
+            color: #c9d1d9;
+            line-height: 2;
+        }
+        .container {
+            max-width: 720px;
+            margin: 60px auto;
+            padding: 0 20px;
+        }
+        h1 {
+            color: #f0f6fc;
+            font-size: 26px;
+            margin-bottom: 15px;
+            text-align: center;
+        }
+        .date {
+            text-align: center;
+            color: #8b949e;
+            font-size: 14px;
+            margin-bottom: 40px;
+        }
+        .content {
+            font-size: 16px;
+            padding-bottom: 60px;
+            border-bottom: 1px solid #30363d;
+        }
+        .back-btn {
+            text-align: center;
+            margin-top: 40px;
+        }
+        .back-btn a {
+            display: inline-block;
+            padding: 10px 26px;
+            background: #161b22;
+            border: 1px solid #30363d;
+            color: #58a6ff;
+            text-decoration: none;
+            border-radius: 30px;
+            transition: 0.3s;
+        }
+        .back-btn a:hover {
+            background: #58a6ff;
+            color: #0d1117;
+        }
+        footer {
+            text-align: center;
+            padding: 30px 0;
+            color: #6e7681;
+            font-size: 14px;
+        }
     </style>
 </head>
 <body>
-<nav><a href="/">← 返回首页</a></nav>
+
 <div class="container">
-    <h1>如何在 GitHub.io 搭建个人博客</h1>
+    <h1>GitHub Pages 博客搭建避坑指南</h1>
     <div class="date">2026-05-14</div>
+
     <div class="content">
-        <p>1. 创建仓库：用户名.github.io</p>
-        <p>2. 开启 GitHub Pages</p>
-        <p>3. 根目录放 index.html，文章统一放在 posts 文件夹</p>
-        <p>路径用 /posts/xxx.html 写法，兼容 GitHub Pages，不404。</p>
+        <p>最近搭建了自己的 GitHub Pages 个人博客，过程中踩了不少坑，整理了一份避坑指南，分享给想要搭建个人博客的朋友，希望大家能少走弯路，快速拥有自己的免费博客。</p>
+        <p>首先说最容易踩的坑——路径问题，这也是很多人出现 404 报错的核心原因。GitHub Pages 对路径大小写敏感，文件夹和文件名必须全小写，比如我用的 posts 文件夹，不能写成 Posts 或 POSTS，否则会找不到文件。另外，链接建议用根路径写法，比如 /posts/article1.html，比相对路径更稳定，不容易出错。</p>
+        <p>其次是文件命名，首页必须命名为 index.html，这是 GitHub Pages 默认的首页文件，少一个字母、多一个空格都会导致首页无法正常显示。文章页面的命名也建议统一规范，比如 article1.html、article2.html，方便后续管理，避免出现中文文件名，容易导致乱码或无法访问。</p>
+        <p>还有一个容易忽略的点，就是提交文件后，GitHub Pages 部署需要时间，一般1-5分钟，不要刚提交就着急访问，耐心等几分钟再刷新，很多时候不是配置错了，只是还没部署完成。如果部署后还是无法访问，可以去仓库 Settings → Pages 查看部署状态，有没有报错提示。</p>
+        <p>最后，GitHub Pages 只支持静态文件，不能运行后端代码，所以不要尝试放 PHP、Java 等文件，没用且会报错。如果只是用来记录日常、分享笔记，纯静态的 HTML 就足够了，简单、稳定、免费，还不用维护服务器。</p>
+        <p>总结一下，搭建 GitHub Pages 博客，核心就是注意路径、文件名规范，耐心等待部署，避开这几个坑，就能顺利拥有自己的个人博客啦。</p>
+    </div>
+
+    <!-- 返回首页放底部 -->
+    <div class="back-btn">
+        <a href="/">返回首页</a>
     </div>
 </div>
-<footer>© 2026 laozhangtour.github.io</footer>
+
+<footer>
+    © 2026 laozhangtour.github.io
+</footer>
+
 </body>
 </html>
