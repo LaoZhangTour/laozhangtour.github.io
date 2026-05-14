@@ -81,6 +81,9 @@
             margin-bottom: 20px;
             transition: 0.3s;
             display: none;
+            /* 让内部元素可以靠右对齐 */
+            position: relative;
+            padding-bottom: 60px;
         }
         .post.show {
             display: block;
@@ -99,8 +102,9 @@
             margin: 10px 0;
         }
         .read-more {
-            margin-top: 15px;
-            display: inline-block;
+            position: absolute;
+            right: 28px;
+            bottom: 20px;
             padding: 6px 18px;
             border: 1px solid #30363d;
             border-radius: 20px;
@@ -118,7 +122,7 @@
             text-align: center;
             margin: 40px 0;
         }
-        #nextPage {
+        .page-btn {
             padding: 10px 30px;
             background: #161b22;
             border: 1px solid #30363d;
@@ -126,11 +130,12 @@
             border-radius: 30px;
             cursor: pointer;
             font-size: 15px;
+            margin: 0 8px;
             display: none;
         }
-        #nextPage:hover {
+        .page-btn:hover {
             background: #58a6ff;
-            color: #000;
+            color: #0d1117;
         }
         footer {
             text-align: center;
@@ -160,53 +165,53 @@
         <p class="desc">热爱生活 | 喜欢旅行 | 记录技术与日常</p>
     </div>
 
-    <!-- 文章列表 -->
     <div class="posts-container">
         <div class="post">
             <h3>周末短途旅行随笔</h3>
             <div class="date">2026-05-14</div>
-            <p>避开城市喧嚣，赴一场小众山野村落的短途旅行，记录慢下来的时光。</p>
+            <p>避开城市喧嚣，赴一场小众山野村落的短途旅行，记录慢下来的时光，感受生活里的小美好与松弛感。</p>
             <a href="/posts/article1.html" class="read-more">阅读更多</a>
         </div>
 
         <div class="post">
             <h3>GitHub Pages 博客搭建避坑指南</h3>
             <div class="date">2026-05-14</div>
-            <p>整理博客搭建过程中的常见坑点，帮你快速搭建免费个人博客。</p>
+            <p>整理博客搭建过程中的常见坑点，分享路径规范、文件命名、部署技巧，帮你快速搭建免费个人博客。</p>
             <a href="/posts/article2.html" class="read-more">阅读更多</a>
         </div>
 
         <div class="post">
             <h3>第三篇测试文章</h3>
             <div class="date">2026-05-14</div>
-            <p>这是第三篇文章，用于测试分页效果。</p>
+            <p>这是第三篇测试文章，用来测试分页布局效果。</p>
             <a href="#" class="read-more">阅读更多</a>
         </div>
 
         <div class="post">
             <h3>第四篇测试文章</h3>
             <div class="date">2026-05-14</div>
-            <p>这是第四篇文章，用于测试分页效果。</p>
+            <p>这是第四篇测试文章，用来测试分页布局效果。</p>
             <a href="#" class="read-more">阅读更多</a>
         </div>
 
         <div class="post">
             <h3>第五篇测试文章</h3>
             <div class="date">2026-05-14</div>
-            <p>这是第五篇文章，用于测试分页效果。</p>
+            <p>这是第五篇测试文章，第一页最后一条。</p>
             <a href="#" class="read-more">阅读更多</a>
         </div>
 
         <div class="post">
-            <h3>第六篇文章（第2页）</h3>
+            <h3>第六篇文章 第二页开始</h3>
             <div class="date">2026-05-14</div>
-            <p>这篇会出现在第二页，点下一页才显示。</p>
+            <p>进入第二页才会显示，可以点上一页返回首页。</p>
             <a href="#" class="read-more">阅读更多</a>
         </div>
     </div>
 
     <div class="pagination">
-        <button id="nextPage">下一页</button>
+        <button class="page-btn" id="prevPage">上一页</button>
+        <button class="page-btn" id="nextPage">下一页</button>
     </div>
 </div>
 
@@ -216,35 +221,34 @@
 
 <script>
     const posts = document.querySelectorAll('.post');
+    const prevBtn = document.getElementById('prevPage');
     const nextBtn = document.getElementById('nextPage');
     let page = 1;
     const perPage = 5;
 
-    function showPosts() {
+    function renderPage() {
         const start = (page - 1) * perPage;
         const end = start + perPage;
 
-        posts.forEach((post, index) => {
-            if (index >= start && index < end) {
-                post.classList.add('show');
-            } else {
-                post.classList.remove('show');
-            }
+        posts.forEach((item, idx) => {
+            item.classList.toggle('show', idx >= start && idx < end);
         });
 
-        if (end >= posts.length) {
-            nextBtn.style.display = 'none';
-        } else {
-            nextBtn.style.display = 'inline-block';
-        }
+        prevBtn.style.display = page === 1 ? 'none' : 'inline-block';
+        nextBtn.style.display = end >= posts.length ? 'none' : 'inline-block';
     }
 
-    nextBtn.addEventListener('click', () => {
-        page++;
-        showPosts();
-    });
+    prevBtn.onclick = () => {
+        if (page > 1) page--;
+        renderPage();
+    };
 
-    showPosts();
+    nextBtn.onclick = () => {
+        page++;
+        renderPage();
+    };
+
+    renderPage();
 </script>
 
 </body>
