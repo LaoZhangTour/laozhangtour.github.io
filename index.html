@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>老张的暗黑博客 | LaoZhang</title>
+    <title>老张的个人博客 | 首页</title>
     <style>
         * {
             margin: 0;
@@ -18,7 +18,6 @@
             line-height: 1.8;
         }
 
-        /* 导航栏 */
         nav {
             background-color: #161b22;
             padding: 18px 0;
@@ -53,14 +52,12 @@
             color: #58a6ff;
         }
 
-        /* 主容器 */
         .container {
             max-width: 780px;
             margin: 40px auto;
             padding: 0 20px;
         }
 
-        /* 个人简介卡片 */
         .profile-card {
             background-color: #161b22;
             border-radius: 14px;
@@ -89,7 +86,6 @@
             font-size: 15px;
         }
 
-        /* 博客文章卡片 */
         .post {
             background-color: #161b22;
             border: 1px solid #30363d;
@@ -104,23 +100,22 @@
             transform: translateY(-3px);
         }
 
-        .post h3 {
+        .post h3 a {
             color: #f0f6fc;
             font-size: 20px;
-            margin-bottom: 10px;
+            text-decoration: none;
         }
 
-        .post .date {
+        .post h3 a:hover {
+            color: #58a6ff;
+        }
+
+        .date {
             font-size: 13px;
             color: #8b949e;
-            margin-bottom: 12px;
+            margin: 10px 0;
         }
 
-        .post p {
-            color: #c9d1d9;
-        }
-
-        /* 页脚 */
         footer {
             text-align: center;
             padding: 40px 0;
@@ -133,37 +128,33 @@
 </head>
 <body>
 
-<!-- 顶部导航 -->
 <nav>
     <h1>老张的个人博客</h1>
     <p>记录 · 沉淀 · 成长</p>
     <div class="nav-links">
         <a href="/">首页</a>
         <a href="https://github.com/laozhangtour" target="_blank">GitHub</a>
-        <a href="#">技术随笔</a>
-        <a href="#">生活日记</a>
     </div>
 </nav>
 
 <div class="container">
-    <!-- 个人信息 自动拉取GitHub头像 -->
     <div class="profile-card">
         <img class="avatar" src="https://github.com/laozhangtour.png" alt="头像">
         <h2>LaoZhang 老张</h2>
         <p class="desc">热爱生活 | 喜欢旅行 | 记录技术与日常</p>
     </div>
 
-    <!-- 博客文章 -->
+    <!-- 文章列表 新增就在下面加 -->
     <div class="post">
-        <h3>欢迎访问我的暗黑风格博客</h3>
+        <h3><a href="posts/article1.html">欢迎来到我的暗黑风格博客</a></h3>
         <div class="date">2026-05-14</div>
         <p>基于 GitHub Pages 搭建纯静态暗黑主题博客，简洁干净，手机电脑都适配，无需服务器，永久免费托管。</p>
     </div>
 
     <div class="post">
-        <h3>如何在 GitHub.io 搭建个人博客</h3>
+        <h3><a href="posts/article2.html">如何在 GitHub.io 搭建个人博客</a></h3>
         <div class="date">2026-05-14</div>
-        <p>只需创建同名仓库，配置 Pages，放入 index.html 即可拥有属于自己的个人主页博客。</p>
+        <p>免费搭建个人博客全过程，不用服务器，直接托管在 GitHub。</p>
     </div>
 
 </div>
