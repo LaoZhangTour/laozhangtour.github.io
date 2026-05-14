@@ -81,7 +81,6 @@
             margin-bottom: 20px;
             transition: 0.3s;
             display: none;
-            /* 让内部元素可以靠右对齐 */
             position: relative;
             padding-bottom: 60px;
         }
@@ -95,11 +94,15 @@
         .post h3 {
             color: #f0f6fc;
             font-size: 20px;
+            display: inline-block;
         }
-        .date {
+        .meta {
             font-size: 13px;
             color: #8b949e;
-            margin: 10px 0;
+            margin-left: 12px;
+        }
+        .post p {
+            margin: 12px 0;
         }
         .read-more {
             position: absolute;
@@ -168,43 +171,43 @@
     <div class="posts-container">
         <div class="post">
             <h3>周末短途旅行随笔</h3>
-            <div class="date">2026-05-14</div>
+            <span class="meta">2026-05-14 作者：老张</span>
             <p>避开城市喧嚣，赴一场小众山野村落的短途旅行，记录慢下来的时光，感受生活里的小美好与松弛感。</p>
             <a href="/posts/article1.html" class="read-more">阅读更多</a>
         </div>
 
         <div class="post">
             <h3>GitHub Pages 博客搭建避坑指南</h3>
-            <div class="date">2026-05-14</div>
+            <span class="meta">2026-05-14 作者：老张</span>
             <p>整理博客搭建过程中的常见坑点，分享路径规范、文件命名、部署技巧，帮你快速搭建免费个人博客。</p>
             <a href="/posts/article2.html" class="read-more">阅读更多</a>
         </div>
 
         <div class="post">
             <h3>第三篇测试文章</h3>
-            <div class="date">2026-05-14</div>
-            <p>这是第三篇测试文章，用来测试分页布局效果。</p>
+            <span class="meta">2026-05-14 作者：老张</span>
+            <p>这是第三篇测试文章，用来测试分页布局效果和摘要字数限制功能。</p>
             <a href="#" class="read-more">阅读更多</a>
         </div>
 
         <div class="post">
             <h3>第四篇测试文章</h3>
-            <div class="date">2026-05-14</div>
-            <p>这是第四篇测试文章，用来测试分页布局效果。</p>
+            <span class="meta">2026-05-14 作者：老张</span>
+            <p>这是第四篇测试文章，用来测试分页布局效果和摘要自动截断三十个字省略效果。</p>
             <a href="#" class="read-more">阅读更多</a>
         </div>
 
         <div class="post">
             <h3>第五篇测试文章</h3>
-            <div class="date">2026-05-14</div>
-            <p>这是第五篇测试文章，第一页最后一条。</p>
+            <span class="meta">2026-05-14 作者：老张</span>
+            <p>这是第五篇测试文章，第一页最后一条内容展示。</p>
             <a href="#" class="read-more">阅读更多</a>
         </div>
 
         <div class="post">
             <h3>第六篇文章 第二页开始</h3>
-            <div class="date">2026-05-14</div>
-            <p>进入第二页才会显示，可以点上一页返回首页。</p>
+            <span class="meta">2026-05-14 作者：老张</span>
+            <p>进入第二页才会显示，可以点上一页返回首页查看全部文章列表内容。</p>
             <a href="#" class="read-more">阅读更多</a>
         </div>
     </div>
@@ -220,6 +223,16 @@
 </footer>
 
 <script>
+    // 摘要限制30字，超出加省略号
+    const limitLen = 30;
+    document.querySelectorAll('.post p').forEach(item => {
+        let text = item.innerText.trim();
+        if (text.length > limitLen) {
+            item.innerText = text.substring(0, limitLen) + '…';
+        }
+    });
+
+    // 分页逻辑
     const posts = document.querySelectorAll('.post');
     const prevBtn = document.getElementById('prevPage');
     const nextBtn = document.getElementById('nextPage');
