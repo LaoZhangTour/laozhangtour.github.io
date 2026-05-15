@@ -43,6 +43,8 @@
             align-items: center;
             gap: 30px;
             flex-wrap: wrap;
+            position: relative;
+            min-height: 240px;
         }
         .avatar-box {
             width: 140px;
@@ -81,11 +83,13 @@
             color: #8b949e;
             min-width: 60px;
         }
-        /* 联系图标按钮 */
+        /* 社交按钮固定卡片右下角 */
         .contact-btns {
+            position: absolute;
+            right: 30px;
+            bottom: 30px;
             display: flex;
             gap: 15px;
-            margin-top: 20px;
         }
         .contact-btn {
             display: inline-flex;
@@ -132,7 +136,6 @@
             margin-top: 60px;
         }
     </style>
-    <!-- 字体图标库 -->
     <link rel="stylesheet" href="https://cdn.bootcdn.net/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
 <body>
@@ -147,27 +150,28 @@
         <div class="avatar-box">
             <img class="avatar" src="https://github.com/laozhangtour.png" alt="老张头像">
         </div>
-        <!-- 右侧个人信息 -->
+        <!-- 右侧信息 完整保留 info-list、专注、理念 -->
         <div class="info-box">
-            <h2>老张</h2>
+            <h2>LaoZhangTour</h2>
             <div class="info-list">
-                <p><span>昵称</span>：LaoZhang</p>
-                <p><span>简介</span>：热爱生活，喜欢旅行、记录日常与技术点滴，用文字沉淀成长，分享美好与感悟。</p>
+                <p><span>昵称</span>：LaoZhangTour</p>
+                <p><span>简介</span>：用文字沉淀成长，分享美好与感悟</p>
                 <p><span>专注</span>：生活随笔、技术笔记、个人成长</p>
                 <p><span>理念</span>：简单生活，认真记录，慢慢沉淀</p>
             </div>
-            <!-- 已填好你的联系方式 -->
-            <div class="contact-btns">
-                <a href="tencent://message/?uin=88347649" class="contact-btn" title="QQ">
-                    <i class="fa-brands fa-qq"></i>
-                </a>
-                <a href="https://weibo.com/u/2230886424" target="_blank" class="contact-btn" title="微博">
-                    <i class="fa-brands fa-weibo"></i>
-                </a>
-                <a href="mailto:helpcenter@qq.com" class="contact-btn" title="邮箱">
-                    <i class="fa-solid fa-envelope"></i>
-                </a>
-            </div>
+        </div>
+
+        <!-- 社交按钮 卡片右下角 -->
+        <div class="contact-btns">
+            <a href="tencent://message/?uin=88347649" class="contact-btn" title="QQ">
+                <i class="fa-brands fa-qq"></i>
+            </a>
+            <a href="https://weibo.com/u/2230886424" target="_blank" class="contact-btn" title="微博">
+                <i class="fa-brands fa-weibo"></i>
+            </a>
+            <a href="mailto:helpcenter@qq.com" class="contact-btn" title="邮箱">
+                <i class="fa-solid fa-envelope"></i>
+            </a>
         </div>
     </div>
 
@@ -177,7 +181,7 @@
 </div>
 
 <footer>
-    © 2026 老张的个人博客
+    © 2026 LaoZhangTour 个人博客
 </footer>
 
 </body>
