@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>作者简介 | 老张的个人博客</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            font-family: "Microsoft Yahei", system-ui, sans-serif;
+            background-color: #0d1117;
+            color: #c9d1d9;
+            line-height: 2;
+        }
+        nav {
+            background-color: #161b22;
+            padding: 18px 0;
+            text-align: center;
+            border-bottom: 1px solid #30363d;
+            margin-bottom: 60px;
+        }
+        nav h1 {
+            font-size: 24px;
+            color: #f0f6fc;
+            font-weight: 500;
+        }
+        .container {
+            max-width: 720px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        /* 身份证式左右布局 */
+        .about-card {
+            background-color: #161b22;
+            border: 1px solid #30363d;
+            border-radius: 14px;
+            padding: 30px;
+            display: flex;
+            align-items: center;
+            gap: 30px;
+            flex-wrap: wrap;
+        }
+        .avatar-box {
+            width: 140px;
+            height: 140px;
+            flex-shrink: 0;
+        }
+        .avatar {
+            width: 100%;
+            height: 100%;
+            border-radius: 8px;
+            border: 2px solid #30363d;
+            object-fit: cover;
+        }
+        .info-box {
+            flex: 1;
+            min-width: 280px;
+        }
+        .info-box h2 {
+            color: #f0f6fc;
+            font-size: 22px;
+            margin-bottom: 15px;
+            border-bottom: 1px solid #30363d;
+            padding-bottom: 8px;
+        }
+        .info-list {
+            font-size: 15px;
+            margin-bottom: 20px;
+        }
+        .info-list p {
+            margin: 8px 0;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+        .info-list span {
+            color: #8b949e;
+            min-width: 60px;
+        }
+        /* 联系图标按钮 */
+        .contact-btns {
+            display: flex;
+            gap: 15px;
+            margin-top: 20px;
+        }
+        .contact-btn {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 40px;
+            height: 40px;
+            border-radius: 6px;
+            background-color: #21262d;
+            border: 1px solid #30363d;
+            color: #58a6ff;
+            text-decoration: none;
+            transition: 0.3s;
+            font-size: 18px;
+        }
+        .contact-btn:hover {
+            background-color: #58a6ff;
+            color: #0d1117;
+            border-color: #58a6ff;
+        }
+        .back-btn {
+            margin-top: 40px;
+            text-align: center;
+        }
+        .back-btn a {
+            display: inline-block;
+            padding: 10px 26px;
+            background: #161b22;
+            border: 1px solid #30363d;
+            color: #58a6ff;
+            text-decoration: none;
+            border-radius: 30px;
+            transition: 0.3s;
+        }
+        .back-btn a:hover {
+            background: #58a6ff;
+            color: #0d1117;
+        }
+        footer {
+            text-align: center;
+            padding: 40px 0;
+            color: #6e7681;
+            font-size: 14px;
+            margin-top: 60px;
+        }
+    </style>
+    <!-- 字体图标库 -->
+    <link rel="stylesheet" href="https://cdn.bootcdn.net/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+
+<nav>
+    <h1>作者简介</h1>
+</nav>
+
+<div class="container">
+    <div class="about-card">
+        <!-- 左侧头像 -->
+        <div class="avatar-box">
+            <img class="avatar" src="https://github.com/laozhangtour.png" alt="老张头像">
+        </div>
+        <!-- 右侧个人信息 -->
+        <div class="info-box">
+            <h2>老张</h2>
+            <div class="info-list">
+                <p><span>昵称</span>：LaoZhang</p>
+                <p><span>简介</span>：热爱生活，喜欢旅行、记录日常与技术点滴，用文字沉淀成长，分享美好与感悟。</p>
+                <p><span>专注</span>：生活随笔、技术笔记、个人成长</p>
+                <p><span>理念</span>：简单生活，认真记录，慢慢沉淀</p>
+            </div>
+            <!-- 已填好你的联系方式 -->
+            <div class="contact-btns">
+                <a href="tencent://message/?uin=88347649" class="contact-btn" title="QQ">
+                    <i class="fa-brands fa-qq"></i>
+                </a>
+                <a href="https://weibo.com/u/2230886424" target="_blank" class="contact-btn" title="微博">
+                    <i class="fa-brands fa-weibo"></i>
+                </a>
+                <a href="mailto:helpcenter@qq.com" class="contact-btn" title="邮箱">
+                    <i class="fa-solid fa-envelope"></i>
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <div class="back-btn">
+        <a href="/">返回首页</a>
+    </div>
+</div>
+
+<footer>
+    © 2026 老张的个人博客
+</footer>
+
+</body>
+</html>
