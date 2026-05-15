@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>作者简介 | 老张的个人博客</title>
+    <title>作者简介 | 老张头的个人博客</title>
     <style>
         * {
             margin: 0;
@@ -40,16 +40,21 @@
             border-radius: 14px;
             padding: 30px;
             display: flex;
-            align-items: center;
+            align-items: flex-start;
             gap: 30px;
             flex-wrap: wrap;
-            position: relative;
-            min-height: 280px;
+        }
+        /* 左侧头像区域 */
+        .avatar-wrap {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 16px;
+            flex-shrink: 0;
         }
         .avatar-box {
             width: 140px;
             height: 140px;
-            flex-shrink: 0;
         }
         .avatar {
             width: 100%;
@@ -58,10 +63,35 @@
             border: 2px solid #30363d;
             object-fit: cover;
         }
+        /* 头像下方社交按钮 圆形布局 */
+        .contact-btns {
+            display: flex;
+            gap: 12px;
+        }
+        .contact-btn {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 36px;
+            height: 36px;
+            border-radius: 50%;
+            background-color: #21262d;
+            border: 1px solid #30363d;
+            color: #58a6ff;
+            text-decoration: none;
+            transition: 0.3s;
+            font-size: 16px;
+        }
+        .contact-btn:hover {
+            background-color: #58a6ff;
+            color: #0d1117;
+            border-color: #58a6ff;
+        }
+        /* 右侧信息区域 */
         .info-box {
             flex: 1;
             min-width: 280px;
-            padding-bottom: 40px;
+            padding-top: 10px;
         }
         .info-box h2 {
             color: #f0f6fc;
@@ -82,33 +112,6 @@
         .info-list span {
             color: #8b949e;
             min-width: 60px;
-        }
-        /* 社交按钮固定卡片右下角 */
-        .contact-btns {
-            position: absolute;
-            right: 30px;
-            bottom: 30px;
-            display: flex;
-            gap: 15px;
-        }
-        .contact-btn {
-            display: inline-flex;
-            align-items: center;
-            justify-content: center;
-            width: 40px;
-            height: 40px;
-            border-radius: 6px;
-            background-color: #21262d;
-            border: 1px solid #30363d;
-            color: #58a6ff;
-            text-decoration: none;
-            transition: 0.3s;
-            font-size: 18px;
-        }
-        .contact-btn:hover {
-            background-color: #58a6ff;
-            color: #0d1117;
-            border-color: #58a6ff;
         }
         .back-btn {
             margin-top: 40px;
@@ -146,11 +149,25 @@
 
 <div class="container">
     <div class="about-card">
-        <!-- 左侧头像 -->
-        <div class="avatar-box">
-            <img class="avatar" src="https://github.com/laozhangtour.png" alt="老张头像">
+        <!-- 左侧：头像 + 下方圆形社交按钮 -->
+        <div class="avatar-wrap">
+            <div class="avatar-box">
+                <img class="avatar" src="https://github.com/laozhangtour.png" alt="头像">
+            </div>
+            <div class="contact-btns">
+                <a href="tencent://message/?uin=88347649" class="contact-btn" title="QQ">
+                    <i class="fa-brands fa-qq"></i>
+                </a>
+                <a href="https://weibo.com/u/2230886424" target="_blank" class="contact-btn" title="微博">
+                    <i class="fa-brands fa-weibo"></i>
+                </a>
+                <a href="mailto:helpcenter@qq.com" class="contact-btn" title="邮箱">
+                    <i class="fa-solid fa-envelope"></i>
+                </a>
+            </div>
         </div>
-        <!-- 右侧信息 完整保留 info-list、专注、理念 -->
+
+        <!-- 右侧：个人信息列表 -->
         <div class="info-box">
             <h2>LaoZhangTour</h2>
             <div class="info-list">
@@ -159,19 +176,6 @@
                 <p><span>专注</span>：生活随笔、技术笔记、个人成长</p>
                 <p><span>理念</span>：简单生活，认真记录，慢慢沉淀</p>
             </div>
-        </div>
-
-        <!-- 社交按钮 卡片右下角 -->
-        <div class="contact-btns">
-            <a href="tencent://message/?uin=88347649" class="contact-btn" title="QQ">
-                <i class="fa-brands fa-qq"></i>
-            </a>
-            <a href="https://weibo.com/u/2230886424" target="_blank" class="contact-btn" title="微博">
-                <i class="fa-brands fa-weibo"></i>
-            </a>
-            <a href="mailto:helpcenter@qq.com" class="contact-btn" title="邮箱">
-                <i class="fa-solid fa-envelope"></i>
-            </a>
         </div>
     </div>
 
