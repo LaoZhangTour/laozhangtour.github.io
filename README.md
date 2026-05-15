@@ -29,9 +29,9 @@
 
 ## 目录结构
 laozhangtour.github.io/
-├── index.html # 首页（文章列表、分页、个人简介）
-├── README.md # 项目说明文档
-└── posts/ # 文章详情页目录
-├── article1.html # 文章 1：周末短途旅行随笔
-├── article2.html # 文章 2：GitHub Pages 博客搭建避坑指南
-└── ... # 新增文章统一放在此目录
+├── index.html          # 博客首页（文章列表 + 分页 + 个人简介）
+├── README.md           # 项目说明文档
+└── posts/              # 所有文章详情页存放目录
+    ├── article1.html
+    ├── article2.html
+    └── 后续新增文章统一放这里
