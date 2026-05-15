@@ -3,60 +3,68 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>老张头的个人博客 | 首页</title>
+    <title>LaoZhangTour | Dark Theme Blog</title>
     <style>
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
         }
+
         body {
             font-family: "Microsoft Yahei", system-ui, sans-serif;
             background-color: #0d1117;
             color: #c9d1d9;
             line-height: 1.8;
         }
+
+        /* 导航栏样式 */
         nav {
             background-color: #161b22;
             padding: 18px 0;
             text-align: center;
             border-bottom: 1px solid #30363d;
         }
+
         nav h1 {
             font-size: 24px;
             color: #f0f6fc;
             font-weight: 500;
         }
-        nav p {
-            font-size: 14px;
-            color: #8b949e;
-        }
+
         .nav-links {
             margin-top: 12px;
         }
+
         .nav-links a {
             color: #8b949e;
             text-decoration: none;
             margin: 0 12px;
             font-size: 15px;
-            transition: 0.3s;
+            transition: color 0.3s ease;
         }
+
         .nav-links a:hover {
             color: #58a6ff;
         }
+
+        /* 容器 */
         .container {
             max-width: 780px;
             margin: 40px auto;
             padding: 0 20px;
         }
+
+        /* 个人资料卡片 */
         .profile-card {
             background-color: #161b22;
+            border: 1px solid #30363d;
             border-radius: 14px;
             padding: 35px;
             text-align: center;
-            border: 1px solid #30363d;
             margin-bottom: 30px;
         }
+
         .avatar {
             width: 120px;
             height: 120px;
@@ -64,15 +72,29 @@
             border: 3px solid #30363d;
             margin-bottom: 18px;
         }
+
         .profile-card h2 {
-            color: #f0f6fc;
             font-size: 22px;
             margin-bottom: 8px;
         }
+
+        /* 作者名字超链样式 统一控制 */
+        .profile-card h2 a {
+            color: #f0f6fc;
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        .profile-card h2 a:hover {
+            color: #58a6ff;
+        }
+
         .profile-card .desc {
             color: #8b949e;
             font-size: 15px;
         }
+
+        /* 文章卡片 */
         .post {
             background-color: #161b22;
             border: 1px solid #30363d;
@@ -84,18 +106,22 @@
             position: relative;
             padding-bottom: 60px;
         }
+
         .post.show {
             display: block;
         }
+
         .post:hover {
             border-color: #58a6ff;
             transform: translateY(-3px);
         }
+
         .post h3 {
             color: #f0f6fc;
             font-size: 20px;
         }
-        /* 右上角 日期+作者 同一行水平排列 */
+
+        /* 右上角日期作者 */
         .post-meta {
             position: absolute;
             top: 28px;
@@ -104,9 +130,12 @@
             color: #8b949e;
             white-space: nowrap;
         }
+
         .post p {
             margin: 12px 0;
         }
+
+        /* 阅读更多按钮 */
         .read-more {
             position: absolute;
             right: 28px;
@@ -119,15 +148,19 @@
             font-size: 14px;
             transition: 0.3s;
         }
+
         .read-more:hover {
             background: #58a6ff;
             color: #0d1117;
             border-color: #58a6ff;
         }
+
+        /* 分页 */
         .pagination {
             text-align: center;
             margin: 40px 0;
         }
+
         .page-btn {
             padding: 10px 30px;
             background: #161b22;
@@ -138,18 +171,21 @@
             font-size: 15px;
             margin: 0 8px;
             display: none;
+            transition: 0.3s;
         }
+
         .page-btn:hover {
             background: #58a6ff;
             color: #0d1117;
         }
+
+        /* 页脚版权 */
         footer {
             text-align: center;
             padding: 40px 0;
             color: #6e7681;
             font-size: 14px;
             border-top: 1px solid #30363d;
-            margin-top: 20px;
         }
     </style>
 </head>
@@ -157,69 +193,66 @@
 
 <nav>
     <h1>老张头的个人博客</h1>
-    <p>记录 · 沉淀 · 成长</p>
     <div class="nav-links">
         <a href="/">首页</a>
-        <a href="https://github.com/laozhangtour" target="_blank">GitHub</a>
+        <a href="items/author.html">关于作者</a>
     </div>
 </nav>
 
 <div class="container">
     <div class="profile-card">
-    <img class="avatar" src="https://github.com/laozhangtour.png" alt="头像">
-    <h2>
-        <a href="items/author.html" style="color:#f0f6fc; text-decoration:none;">LaoZhangTour</a>
-    </h2>
-    <p class="desc">热爱生活 | 喜欢旅行 | 记录技术与日常</p>
-</div>
+        <img class="avatar" src="https://github.com/laozhangtour.png" alt="头像">
+        <h2><a href="items/author.html">LaoZhangTour</a></h2>
+        <p class="desc">热爱生活 | 喜欢旅行 | 记录技术与日常</p>
+    </div>
 
     <div class="posts-container">
         <div class="post">
-            <div class="post-meta">2026/5/14 &nbsp; 老张</div>
+            <div class="post-meta">2026/5/14 &nbsp; LaoZhangTour</div>
             <h3>周末短途旅行随笔</h3>
-            <p>避开城市喧嚣，赴一场小众山野村落的短途旅行，记录慢下来的时光，感受生活里的小美好与松弛感。</p>
+            <p>避开城市喧嚣，赴一场小众山野村落的短途旅行，记录慢下来的时光与生活美好。</p>
             <a href="/posts/article1.html" class="read-more">阅读更多</a>
         </div>
 
         <div class="post">
-            <div class="post-meta">2026/5/14 &nbsp; 老张</div>
+            <div class="post-meta">2026/5/14 &nbsp; LaoZhangTour</div>
             <h3>GitHub Pages 博客搭建避坑指南</h3>
-            <p>整理博客搭建过程中的常见坑点，分享路径规范、文件命名、部署技巧，帮你快速搭建免费个人博客。</p>
+            <p>整理静态博客搭建常见问题与部署技巧，零基础也能快速拥有个人独立博客站点。</p>
             <a href="/posts/article2.html" class="read-more">阅读更多</a>
         </div>
 
         <div class="post">
-            <div class="post-meta">2026/5/14 &nbsp; 老张</div>
+            <div class="post-meta">2026/5/14 &nbsp; LaoZhangTour</div>
             <h3>第三篇测试文章</h3>
-            <p>这是第三篇测试文章，用来测试分页布局效果和摘要字数限制功能。</p>
+            <p>用于测试分页布局、卡片样式以及摘要自动字数截断效果演示。</p>
             <a href="#" class="read-more">阅读更多</a>
         </div>
 
         <div class="post">
-            <div class="post-meta">2026/5/14 &nbsp; 老张</div>
+            <div class="post-meta">2026/5/14 &nbsp; LaoZhangTour</div>
             <h3>第四篇测试文章</h3>
-            <p>这是第四篇测试文章，用来测试分页布局效果和摘要自动截断三十个字省略效果。</p>
+            <p>测试暗黑主题博客文章卡片排版、悬浮效果与移动端适配表现。</p>
             <a href="#" class="read-more">阅读更多</a>
         </div>
 
         <div class="post">
-            <div class="post-meta">2026/5/14 &nbsp; 老张</div>
+            <div class="post-meta">2026/5/14 &nbsp; LaoZhangTour</div>
             <h3>第五篇测试文章</h3>
-            <p>这是第五篇测试文章，第一页最后一条内容展示。</p>
+            <p>第一页最后一篇演示文章，用于验证分页数量控制是否正常生效。</p>
             <a href="#" class="read-more">阅读更多</a>
         </div>
 
         <div class="post">
-            <div class="post-meta">2026/5/14 &nbsp; 老张</div>
+            <div class="post-meta">2026/5/14 &nbsp; LaoZhangTour</div>
             <h3>第六篇文章 第二页开始</h3>
-            <p>进入第二页才会显示，可以点上一页返回首页查看全部文章列表内容。</p>
+            <p>进入第二页展示效果，可点击上一页返回首页文章列表。</p>
             <a href="#" class="read-more">阅读更多</a>
         </div>
     </div>
 
     <div class="pagination">
-        <button class="page-btn" id="prevPage">上一页</button>
-        <button class="page-btn" id="nextPage">下一页</button>
+        <button class="page-btn" id="prevBtn">上一页</button>
+        <button class="page-btn" id="nextBtn">下一页</button>
     </div>
 </div>
 
@@ -228,7 +261,7 @@
 </footer>
 
 <script>
-    // 摘要限制30字，超出加省略号
+    // 摘要30字自动截断
     const limitLen = 30;
     document.querySelectorAll('.post p').forEach(item => {
         let text = item.innerText.trim();
@@ -239,8 +272,9 @@
 
     // 分页逻辑
     const posts = document.querySelectorAll('.post');
-    const prevBtn = document.getElementById('prevPage');
-    const nextBtn = document.getElementById('nextPage');
+    const prevBtn = document.getElementById('prevBtn');
+    const nextBtn = document.getElementById('nextBtn');
+
     let page = 1;
     const perPage = 5;
 
@@ -249,19 +283,25 @@
         const end = start + perPage;
 
         posts.forEach((item, idx) => {
-            item.classList.toggle('show', idx >= start && idx < end);
+            if (idx >= start && idx < end) {
+                item.classList.add('show');
+            } else {
+                item.classList.remove('show');
+            }
         });
 
         prevBtn.style.display = page === 1 ? 'none' : 'inline-block';
         nextBtn.style.display = end >= posts.length ? 'none' : 'inline-block';
     }
 
-    prevBtn.onclick = () => {
-        if (page > 1) page--;
-        renderPage();
+    prevBtn.onclick = function () {
+        if (page > 1) {
+            page--;
+            renderPage();
+        }
     };
 
-    nextBtn.onclick = () => {
+    nextBtn.onclick = function () {
         page++;
         renderPage();
     };
