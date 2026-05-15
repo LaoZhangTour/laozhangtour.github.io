@@ -33,7 +33,7 @@
             margin: 0 auto;
             padding: 0 20px;
         }
-        /* 身份证式左右布局 */
+        /* 外层卡片：左右两块顶部对齐 */
         .about-card {
             background-color: #161b22;
             border: 1px solid #30363d;
@@ -41,20 +41,21 @@
             padding: 30px;
             display: flex;
             align-items: flex-start;
-            gap: 30px;
+            justify-content: center;
+            gap: 35px;
             flex-wrap: wrap;
         }
-        /* 左侧头像区域 */
-        .avatar-wrap {
+        /* 左侧整块：头像 + 下方社交按钮 */
+        .left-block {
             display: flex;
             flex-direction: column;
             align-items: center;
-            gap: 16px;
             flex-shrink: 0;
         }
         .avatar-box {
             width: 140px;
             height: 140px;
+            margin-bottom: 18px;
         }
         .avatar {
             width: 100%;
@@ -63,7 +64,7 @@
             border: 2px solid #30363d;
             object-fit: cover;
         }
-        /* 头像下方社交按钮 圆形布局 */
+        /* 头像下方圆形社交按钮 */
         .contact-btns {
             display: flex;
             gap: 12px;
@@ -87,13 +88,12 @@
             color: #0d1117;
             border-color: #58a6ff;
         }
-        /* 右侧信息区域 */
-        .info-box {
+        /* 右侧信息整块 和 左侧顶部平齐 */
+        .right-block {
             flex: 1;
             min-width: 280px;
-            padding-top: 10px;
         }
-        .info-box h2 {
+        .right-block h2 {
             color: #f0f6fc;
             font-size: 22px;
             margin-bottom: 15px;
@@ -149,8 +149,8 @@
 
 <div class="container">
     <div class="about-card">
-        <!-- 左侧：头像 + 下方圆形社交按钮 -->
-        <div class="avatar-wrap">
+        <!-- 左侧整体块：头像 + 社交按钮 -->
+        <div class="left-block">
             <div class="avatar-box">
                 <img class="avatar" src="https://github.com/laozhangtour.png" alt="头像">
             </div>
@@ -167,8 +167,8 @@
             </div>
         </div>
 
-        <!-- 右侧：个人信息列表 -->
-        <div class="info-box">
+        <!-- 右侧整体块：所有个人信息 -->
+        <div class="right-block">
             <h2>LaoZhangTour</h2>
             <div class="info-list">
                 <p><span>昵称</span>：LaoZhangTour</p>
